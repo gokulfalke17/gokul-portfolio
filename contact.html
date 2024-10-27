@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-title {
+            text-align: center;
+            color: lightcyan;
+            text-shadow: 0 0 10px lightcyan;
+            margin-bottom: 40px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .map-container {
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary {
+            background-color: #00bfff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0080ff;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #f39c12;
+        }
+
+        .navbar-nav .nav-item {
+            gap: 0.5rem;
+        }
+
+        body h2 {
+            text-align: center;
+            color: lightgray;
+            text-shadow: 0 0 10px lightcyan;
+            font-size: 3rem;
+            border-bottom: 5px solid white;
+
+        }
+
+        .heading {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            -webkit-animation: fadeIn 1s ease-in forwards;
+            position: sticky;
+            top: 1;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .contact-section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" style="font-size: 1.8rem;" href="#"><b>Portfolio.</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pl-5" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4 h5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid contact-section heading" data-aos="fade-up" data-aos-duration="1500">
+        <h2 class="contact-title h1"><b>Contact Me</b></h2>
+        <div class="row">
+            <!-- Left Side: Contact Form -->
+            <div class="col-md-1">
+
+            </div>
+
+            <div class="col-md-5">
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Contact Number</label>
+                        <input type="tel" class="form-control" id="contact" name="contact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right Side: Map  -->
+            <div class="col-md-5 justify-content-center">
+                <h1 class="contact-title">Find Me Here</h1>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.3275459111955!2d74.73812151542619!3d19.09867578704748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc16c0048e961%3A0x1636cf8f5eaa36b!2sAhmednagar%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1630495618584!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-1">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Include EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("gokulfalke17@gmail.com"); // Replace with your actual EmailJS user ID
+        })();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                emailjs.sendForm('gokulfalke17@gmail.com', 'gokulfalke17@gmail.com', this) // Replace with your Service ID and Template ID
+                    .then(function () {
+                        alert('Your message has been sent!');
+                        form.reset(); // Reset form fields after submission
+                    }, function (error) {
+                        alert('Failed to send message. Please try again later.');
+                    });
+            });
+
+            AOS.init(); // Initialize AOS animations
+        });
+    </script>
+</body>
+
+</html>

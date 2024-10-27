@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Timeline</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 5px;
+            background: #fff;
+            /* The white central line */
+            transform: translateX(-50%);
+        }
+
+        .timeline .timeline-item {
+            position: relative;
+            width: 48%;
+            /* Adjusted from 50% to give space for the arrow */
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            /* Initially hidden */
+            transform: translateY(100px);
+            /* Start slightly below the view */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            /* Smooth transition */
+        }
+
+        .timeline .timeline-item.active {
+            opacity: 1;
+            /* Visible */
+            transform: translateY(0);
+            /* Move back to original position */
+        }
+
+        .timeline .timeline-item.left {
+            left: 0;
+            text-align: right;
+            /* Align text to the right */
+        }
+
+        .timeline .timeline-item.right {
+            left: 52%;
+            /* Adjusted the left position */
+            text-align: left;
+            /* Align text to the left */
+        }
+
+        .timeline .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            width: 10;
+            height: 0;
+            border-style: solid;
+        }
+
+        /* Arrows for the Left Items (pointing right) */
+        .timeline .timeline-item.left::after {
+            left: 100%;
+            /* Position the arrow on the right side of the left item */
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #fff;
+        }
+
+        /* Arrows for the Right Items (pointing left) */
+        .timeline .timeline-item.right::after {
+            right: 100%;
+            /* Position the arrow on the left side of the right item */
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #fff transparent transparent;
+        }
+
+        .timeline .timeline-item .card {
+            background: #fff;
+            color: #000;
+        }
+
+        h2 {
+            color: white;
+            /* Ensure the heading color remains white */
+        }
+
+        body h1 {
+            text-align: center;
+            color: lightgray;
+            text-shadow: 0 0 10px lightcyan;
+            font-size: 3rem;
+            border-bottom: 5px solid white;
+
+        }
+
+        .heading {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            -webkit-animation: fadeIn 1s ease-in forwards;
+            position: sticky;
+            top: 1;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .navbar-nav {
+            gap: 0.1rem;
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        .nav-link:hover {
+            color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" style="font-size: 1.8rem;" href="#"><b>Portfolio.</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pl-5" id="navbarNav">
+                <ul class="navbar-nav ms-auto h5" style="gap: 1.5rem;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skills.html">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+
+    <!-- Education Section -->
+    <div class="container-fluid pt-4">
+        <h1><b>Education.</b></h1>
+
+        <div class="timeline">
+            <!-- Left Item -->
+            <div class="timeline-item left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphabet Inc.</h5>
+                        <p class="card-text">2021-2024</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
+                            illum sit deserunt porro est at pariaturs.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Item -->
+            <div class="timeline-item right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphabet Inc.</h5>
+                        <p class="card-text">2021-2024</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
+                            illum sit deserunt porro est at pariaturs.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Item -->
+            <div class="timeline-item left">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphabet Inc.</h5>
+                        <p class="card-text">2021-2024</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
+                            illum sit deserunt porro est at pariaturs.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Item -->
+            <div class="timeline-item right">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphabet Inc.</h5>
+                        <p class="card-text">2021-2024</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
+                            illum sit deserunt porro est at pariaturs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to add animation
+        $(document).ready(function () {
+            // Function to check if an element is in the viewport
+            function isElementInView(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 100 // Added offset to handle partially visible items
+                );
+            }
+
+            // Add 'active' class when the item comes into view
+            function checkTimelineItems() {
+                $('.timeline-item').each(function () {
+                    if (isElementInView(this)) {
+                        $(this).addClass('active');
+                    }
+                });
+            }
+
+            // Run on page load
+            checkTimelineItems();
+
+            // Run on scroll
+            $(window).on('scroll', checkTimelineItems);
+        });
+    </script>
+
+</body>
+
+</html>
