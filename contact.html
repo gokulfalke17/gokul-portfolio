@@ -198,13 +198,7 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                emailjs.sendForm('gokulfalke17@gmail.com', 'gokulfalke17@gmail.com', this) // Replace with your Service ID and Template ID
-                    .then(function () {
-                        alert('Your message has been sent!');
-                        form.reset(); // Reset form fields after submission
-                    }, function (error) {
-                        alert('Failed to send message. Please try again later.');
-                    });
+               
             });
 
             AOS.init(); // Initialize AOS animations
