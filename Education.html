@@ -37,42 +37,32 @@
             left: 50%;
             width: 5px;
             background: #fff;
-            /* The white central line */
             transform: translateX(-50%);
         }
 
         .timeline .timeline-item {
             position: relative;
             width: 48%;
-            /* Adjusted from 50% to give space for the arrow */
             padding: 10px;
             box-sizing: border-box;
             opacity: 0;
-            /* Initially hidden */
             transform: translateY(100px);
-            /* Start slightly below the view */
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            /* Smooth transition */
         }
 
         .timeline .timeline-item.active {
             opacity: 1;
-            /* Visible */
             transform: translateY(0);
-            /* Move back to original position */
         }
 
         .timeline .timeline-item.left {
             left: 0;
             text-align: right;
-            /* Align text to the right */
         }
 
         .timeline .timeline-item.right {
             left: 52%;
-            /* Adjusted the left position */
             text-align: left;
-            /* Align text to the left */
         }
 
         .timeline .timeline-item::after {
@@ -84,18 +74,14 @@
             border-style: solid;
         }
 
-        /* Arrows for the Left Items (pointing right) */
         .timeline .timeline-item.left::after {
             left: 100%;
-            /* Position the arrow on the right side of the left item */
             border-width: 10px 0 10px 15px;
             border-color: transparent transparent transparent #fff;
         }
 
-        /* Arrows for the Right Items (pointing left) */
         .timeline .timeline-item.right::after {
             right: 100%;
-            /* Position the arrow on the left side of the right item */
             border-width: 10px 15px 10px 0;
             border-color: transparent #fff transparent transparent;
         }
@@ -107,7 +93,6 @@
 
         h2 {
             color: white;
-            /* Ensure the heading color remains white */
         }
 
         body h1 {
@@ -177,58 +162,51 @@
             </div>
         </div>
     </nav>
-    
 
 
-    <!-- Education Section -->
+
     <div class="container-fluid pt-4">
         <h1><b>Education.</b></h1>
 
         <div class="timeline">
-            <!-- Left Item -->
             <div class="timeline-item left">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Alphabet Inc.</h5>
-                        <p class="card-text">2021-2024</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
-                            illum sit deserunt porro est at pariaturs.</p>
+                        <h5 class="card-title">10th Standard</h5>
+                        <p class="card-text"></p>
+                        <p class="card-text"> <b>Dadasaheb Rupwate Vidyalaya & Junior College Ahmednagar</b><br>
+                            May-2019<br>
+                            <b>Matriculate</b><br>
+                            Percentage 65.20%
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- Right Item -->
             <div class="timeline-item right">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Alphabet Inc.</h5>
-                        <p class="card-text">2021-2024</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
-                            illum sit deserunt porro est at pariaturs.</p>
+                        <h5 class="card-title">12th Standard</h5>
+                        <p class="card-text"><b>Dadasaheb Rupwate Vidyalaya & Junior College Ahmednagar</b><br>
+                            May 2019 - May 2021 <br>
+                            <b>Science | Intermediate</b> <br>
+                            Percentage 75.17%
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- Left Item -->
             <div class="timeline-item left">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Alphabet Inc.</h5>
-                        <p class="card-text">2021-2024</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
-                            illum sit deserunt porro est at pariaturs.</p>
+                        <h5 class="card-title">Graduction</h5>
+                        <p class="card-text"><b>Nalanda College of Computer Science Beed Maharashtra India</b><br>
+                            June 2021 - June 2024<br>
+                            <b>Bachelor Of Computer Science (BSC-CS) Dr. Babasaheb Ambedkar Marathwada University Aurangabad Maharashtra</b><br>
+                            Percentage ---
+                        </p>
                     </div>
                 </div>
             </div>
-            <!-- Right Item -->
-            <div class="timeline-item right">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Alphabet Inc.</h5>
-                        <p class="card-text">2021-2024</p>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quas velit sed
-                            illum sit deserunt porro est at pariaturs.</p>
-                    </div>
-                </div>
-            </div>
+        
         </div>
     </div>
 
@@ -239,9 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
     <script>
-        // JavaScript to add animation
         $(document).ready(function () {
-            // Function to check if an element is in the viewport
             function isElementInView(element) {
                 var rect = element.getBoundingClientRect();
                 return (
@@ -250,7 +226,6 @@
                 );
             }
 
-            // Add 'active' class when the item comes into view
             function checkTimelineItems() {
                 $('.timeline-item').each(function () {
                     if (isElementInView(this)) {
@@ -259,10 +234,8 @@
                 });
             }
 
-            // Run on page load
             checkTimelineItems();
 
-            // Run on scroll
             $(window).on('scroll', checkTimelineItems);
         });
     </script>
